@@ -4,10 +4,11 @@
   "description": "My webpack project",
   "main": "main.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server",
+    "dev": "wp --mode development",
+    "prod": "wp --mode production",
+    "serve": "webpack-dev-server",
     "mon": "nodemon --watch webpack.* --exec \"wp --mode development\"",
-    "dev": "webpack-dashboard -- webpack-dev-server"
+    "dash": "webpack-dashboard -- webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@webpack-cli/init": "^0.3.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "dotenv": "^8.2.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-html-webpack-plugin": "^3.0.7",
     "nodemon": "^2.0.4",
