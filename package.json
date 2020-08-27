@@ -1,0 +1,34 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server",
+    "mon": "nodemon --watch webpack.* --exec \"wp --mode development\"",
+    "dev": "webpack-dashboard -- webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@webpack-cli/init": "^0.3.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-html-webpack-plugin": "^3.0.7",
+    "nodemon": "^2.0.4",
+    "serve": "^11.3.2",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dashboard": "^3.2.1",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.2",
+    "webpack-nano": "^1.0.0",
+    "webpack-plugin-serve": "^1.0.1",
+    "webpackbar": "^4.0.0",
+    "workbox-webpack-plugin": "^5.1.3",
+    "yargs": "^15.4.1"
+  }
+}
