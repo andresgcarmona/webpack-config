@@ -1,4 +1,4 @@
-const { webpackPluginServe: WebpackPluginServe } = require('webpack-dev-server')
+const { WebpackPluginServe } = require('webpack-plugin-serve')
 
 exports.devServer = () => ({
 	watch: true,

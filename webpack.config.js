@@ -1,15 +1,27 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const WebpackBar        = require('webpackbar')
-const WebpackDashboard  = require('webpack-dashboard/plugin')
-const { mode }          = require('yargs').argv
+const { mode }               = require('webpack-nano/argv')
+const { merge }              = require('webpack-merge')
+const { webPage, devServer } = require('./configs/parts')
 
-module.exports = {
-	mode,
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Webpack demo',
-		}),
-		new WebpackBar(),
-		new WebpackDashboard(),
-	],
+const common = merge([
+	{
+		entry: ['./src', 'webpack-plugin-serve/client'],
+	},
+	webPage({ title: 'Webpack demo' }),
+])
+
+const production = merge([])
+
+const development = merge([devServer()])
+
+const getConfig = mode => {
+	switch(mode) {
+		case 'production':
+			return merge([common, production, { mode }])
+		case 'development':
+			return merge([common, development, { mode }])
+		default:
+			throw new Error(`Unrecognized mode ${mode}`)
+	}
 }
+
+module.exports = getConfig(mode)
